@@ -1,56 +1,137 @@
-// validate if the input is a number
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+/*===== MENU SHOW =====*/
+const showMenu = (toggleId, navId) => {
+  const toggle = document.getElementById(toggleId);
+  const nav = document.getElementById(navId);
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const subject = document.getElementById("subject").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const statusMsg = document.getElementById("statusMsg");
-
-  // Simple email regex check
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!name || !email || !subject || !message) {
-    statusMsg.textContent = "⚠️ Please fill out all fields.";
-    statusMsg.style.color = "#f87171"; // red
-    return;
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
   }
+};
+showMenu("nav-toggle", "nav-menu");
 
-  if (!emailPattern.test(email)) {
-    statusMsg.textContent = "⚠️ Please enter a valid email address.";
-    statusMsg.style.color = "#f87171";
-    return;
-  }
-
-  // If everything is valid
-  statusMsg.textContent = "✅ Message sent successfully! (Demo only)";
-  statusMsg.style.color = "#4ade80"; // green
-
-  // Optionally reset form
-  document.getElementById("contactForm").reset();
-});
-
-// Animate skills when visible on scroll
-const progressBars = document.querySelectorAll(".progress");
+const navLinks = document.querySelectorAll(".navbar ul li a");
 
 window.addEventListener("scroll", () => {
-  progressBars.forEach((bar) => {
-    const rect = bar.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      bar.style.width = bar.getAttribute("style").split(":")[1];
+  const scrollPos = window.scrollY + 80; // offset for fixed navbar
+  navLinks.forEach(link => {
+    const section = document.querySelector(link.getAttribute("href"));
+    if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+      link.parentElement.classList.add("active");
+    } else {
+      link.parentElement.classList.remove("active");
     }
   });
 });
 
-var typed = new Typed("#element", {
-  strings: ["Web Developer", "Freelancer", "Designer"],
-  typeSpeed: 50,
+// Smooth scroll for links
+navLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    target.scrollIntoView({ behavior: "smooth" });
+  });
 });
 
-const toggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav-links");
+// ===============================
+// TYPED HERO TEXT
+// ===============================
+if (document.querySelector(".nm")) {
+  new Typed(".nm", {
+    strings: ["Web Developer", "Frontend Developer", "MERN Stack Learner"],
+    typeSpeed: 80,
+    backSpeed: 50,
+    backDelay: 1200,
+    loop: true
+  });
+}
 
-toggle.addEventListener("click", () => {
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+// ===============================
+// SKILL BAR ANIMATION ON SCROLL
+// ===============================
+const skillCards = document.querySelectorAll(".progress");
+
+const skillObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.style.width;
+        bar.style.width = "0";
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 200);
+        skillObserver.unobserve(bar);
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+skillCards.forEach(bar => skillObserver.observe(bar));
+
+// ===============================
+// CONTACT FORM VALIDATION
+// ===============================
+const form = document.getElementById("contactForm");
+const statusMsg = document.getElementById("statusMsg");
+
+if(form){
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+      statusMsg.textContent = "❌ Please fill all fields.";
+      statusMsg.style.color = "#f87171";
+      return;
+    }
+
+    statusMsg.textContent = "✅ Message sent successfully!";
+    statusMsg.style.color = "#47d870";
+
+    form.reset();
+  });
+}
+
+// ===============================
+// OPTIONAL: NAVBAR HIDE ON SCROLL DOWN
+// ===============================
+let lastScroll = 0;
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    navbar.style.transform = "translateY(-120%)";
+  } else {
+    navbar.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+});
+// Active link hover + scroll effect
+navLinks.forEach(link => {
+  link.addEventListener("mouseenter", () => {
+    link.style.transform = "scale(1.12)";
+  });
+  link.addEventListener("mouseleave", () => {
+    link.style.transform = "";
+  });
+});
+
+// certificates section//
+
+ScrollReveal().reveal('.certificate-card', {
+  origin: 'bottom',
+  distance: '40px',
+  duration: 800,
+  interval: 200,
+  easing: 'ease-in-out'
 });

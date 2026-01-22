@@ -1,4 +1,4 @@
-gir
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +6,6 @@ gir
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
@@ -19,20 +18,47 @@ gir
   <body>
     <div class="container">
       <!-- Navbar -->
+<nav class="navbar">
+  <a class="brand" href="#">
+    <img src="./Assets/PT logo.png" alt="Logo" />
+  </a>
 
-      <nav class="navbar">
-        <a class="brand" href="#">
-          <img src="./all photos/PT logo.png" alt="Logo" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="menu-toggle">☰</div>
-      </nav>
+  <ul class="nav-links">
+    <li class="nav-item">
+      <a href="#home">
+        <i class="ri-home-fill"></i>
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#about">
+        <i class="ri-user-3-fill"></i>
+        <span>About</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#projects">
+        <i class="ri-folder-4-fill"></i>
+        <span>Projects</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#skills">
+        <i class="ri-bar-chart-fill"></i>
+        <span>Skills</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#contact">
+        <i class="ri-mail-fill"></i>
+        <span>Contact</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="menu-toggle">☰</div>
+</nav>
+
 
 
       <!-- Intro page  -->
@@ -46,15 +72,19 @@ gir
               <div class="nm">Web Developer</div>
             </div>
             <p class="p">
-              I'm a passionate developer who loves building modern and
-              responsive web applications using the MERN stack.
+              I'm a passionate developer who loves building modern <br>and
+              responsive web applications using the MERN stack
             </p><br>
 
             <div class="icon">
-            <div><a href="https://github.com/Prajwalthitame"
-                <i class="ri-github-fill" id="git1"></i></a></div>
-                 <div><a href="mailto:prajwalthitame@gmail.com"
-               <i class="ri-mail-fill" id="git"></i></a></div>
+            <div>
+              <a href="https://github.com/Prajwalthitame"
+                <i class="ri-github-fill" id="git"></i></a>
+              </div>
+                 <div>
+                  <a href="mailto:prajwalthitame@gmail.com"
+               <i class="ri-mail-fill" id="git"></i></a>
+              </div>
               <a href="https://www.linkedin.com/in/prajwal-thitame-
               03b90a36b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="home__social-icon"
             ><i class="bx bxl-linkedin" id="git"></i></a>
@@ -64,7 +94,7 @@ gir
           <div id="right-container">
             <img
               loading="lazy"
-              src="./all photos/prajwal.jpg"
+              src="./Assets/prajwal.jpg"
               alt="" />
           </div>
         
@@ -75,7 +105,7 @@ gir
           <!-- 🌟 About Me Section -->
           <section class="about" id="about">
             <div class="about-container">
-              <h2>About</h2>
+              <h2 class="aboutt">About</h2>
               <p class="intro">
                 Hi! I'm <span class="highlight"> Prajwal Thitame</span>, a
                 passionate <b>Web Developer</b>
@@ -114,7 +144,7 @@ gir
               </div>
             </div>
             <section class="resume-section" id="resume">
-              <h2>Resume</h2>
+              <h2 class="aboutt">Resume</h2>
               <a
                 class="btn resume-btn"
                 href="https://drive.google.com/file/d/1M2zpB7Duk6UFR9YU_-aDHs5hUdOJa9qb/view?usp=drivesdk"
@@ -139,10 +169,10 @@ gir
               <div class="slider">
                 <!-- Project 1 -->
                 <div class="slide">
-                  <img src="./all photos/htl img.png" alt="Restaurant" />
+                  <img src="./Assets/htl img.png" alt="Restaurant" />
                   <div class="caption">
                     <h3><a href="https://github.com/Prajwalthitame/RestaurantsProject">Restaurant</a></h3>
-                    <p>
+                    <p class="name">
                       Serving Taste with Technology
                     </p>
                   </div>
@@ -151,12 +181,12 @@ gir
                 <!-- Project 2 -->
                 <div class="slide">
                   <img
-                    src="./all photos/music img.png"
+                    src="./Assets/music img.png"
                     alt="music"
                   />
                   <div class="caption">
                     <h3><a href="https://github.com/Prajwalthitame/MusicPlayer">Music</a></h3>
-                    <p>
+                    <p class="name">
                      Feel the Beat. Experience the Music.
                     </p>
                   </div>
@@ -165,12 +195,12 @@ gir
                 <!-- Project 3 -->
                 <div class="slide">
                   <img
-                    src="./all photos/calci img.png"
+                    src="./Assets/calci img.png"
                     alt="Calculate"
                   />
                   <div class="caption">
                     <h3> <a href="https://github.com/Prajwalthitame/calculator">Calculator</a></h3>
-                    <p>
+                    <p class="name">
                      Calculate Smart. Calculate Fast
                     </p>
                   </div>
@@ -183,7 +213,7 @@ gir
         <!-- skills -->
         <div class="skills">
           <section class="skills-section" id="skills">
-            <h2>My Skills</h2>
+            <h2 class="aboutt">My Skills</h2>
             <p class="skills-intro">
               Here are some of the technologies and tools I work with:
             </p>
@@ -245,7 +275,7 @@ gir
         <div class="contact">
           
           <section class="contact-section" id="contact">
-            <h2>Contact Me</h2>
+            <h2 class="aboutt">Contact Me</h2>
             <p class="contact-intro">
               Feel free to reach out! I’ll get back to you as soon as possible.
             </p>
@@ -275,7 +305,7 @@ gir
 
               <div class="form-group">
                 <label for="subject">Subject</label>
-                <input
+                <input 
                   type="text"
                   id="subject"
                   name="subject"
@@ -305,6 +335,83 @@ gir
       </main>
     </div>
 
-    <script></script>
+    
+  <!--===== CERTIFICATES =====-->
+
+<section class="certificates section" id="certificates">
+  <h2 class="aboutt" id="sec">Certificates</h2>
+
+  <div class="certificates-container">
+    
+     <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/C-IMG 1.jpg" alt="TCS iON Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>Front-End Web Development</h3>
+        <p>Certified Front-End Web Developer skilled in HTML, CSS, JavaScript, and responsive web design.</p>
+        <a href="./Assets/C-IMG 1.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+    <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/C-IMG 2.jpg" alt="TCS iON Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>TCS iON Young Professional</h3>
+        <p>TCS iON certified, equipped with essential employability, technical, and professional skills.</p>
+        <a href="./Assets/C-IMG 2.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+    <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/C-IMG3.jpg" alt="HP Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>Web development</h3>
+        <p>Certified  Web Developer skilled in HTML, CSS, JavaScript, and responsive web design.</p>
+        <a href="./Assets/C-IMG3.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+     <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/C-IMG 5.jpg" alt="AWS Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>ESG Job Simulation</h3>
+        <p>ESG Solution Architecture Job Simulation certified by Forage, skilled in cloud solution design and implementation.</p>
+        <a href="./Assets/C-IMG 5.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+     <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/C-IMG 6.jpg" alt="TATA Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>GenAI-Powered Data Analytics</h3>
+        <p>Forage Certified in Tata GenAI-Powered Data Analytics with hands-on experience in data analysis and AI-driven insights</p>
+        <a href="./Assets/C-IMG 6.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- footer -->
+   <footer class="footer" id="footer">
+      <p class="footer__title">Prajwal Thitame</p>
+      <div class="footer__social">
+        <a href="https://www.facebook.com" class="footer__icon"><i class="ri-facebook-fill"></i></i></a>
+        <a href="mailto:prajalthitame@gmai.com" class="footer__icon"><i class="ri-mail-send-fill"></i></a>
+        <a href="https://www.threads.com/?hl=en" class="footer__icon"><i class="ri-twitter-x-line"></i></a>
+      </div>
+      <p class="footer__copy">&#169; All rigths reserved</p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
