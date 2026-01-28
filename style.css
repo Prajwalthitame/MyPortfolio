@@ -31,10 +31,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 83%;
   position: fixed;
   top: 20px;
-  left: 10%;
+  left: 5%;
   padding: 12px 20px;
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(10px) saturate(180%);
@@ -628,7 +628,8 @@ textarea:focus {
   }
 
   #right-container img{
-    width: 75vw;
+    width: 65vw;
+    height: 250px;
     max-width: 320px;
   }
   .about,
@@ -677,7 +678,7 @@ textarea:focus {
     font-size: clamp(1.4rem, 8vw, 2rem);
   }
   #right-container img {
-    width: 52vw;
+    width: 65vw;
     max-width: 280px;
   }
   .about,
